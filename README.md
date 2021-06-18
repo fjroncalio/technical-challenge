@@ -26,4 +26,4 @@ Abra o powershell no diretório src do projeto e execute os seguintes comandos:
 	
 2 - docker run {nome dado para imagem}:{versao da imagem}
 
-- Ex: docker run technicalchallenge:v1
+- Ex: docker run -p 5000:80 technicalchallenge:v1
