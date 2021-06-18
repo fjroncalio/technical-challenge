@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Threading.Tasks;
+using TechnicalChallenge.Domain.Queries.v1.GetNumbersDividers;
 
 namespace TechnicalChallenge.Api.Controllers
 {
@@ -9,17 +11,30 @@ namespace TechnicalChallenge.Api.Controllers
     [Route("api/v1/numbers")]
     public class NumberController : ControllerBase
     {
+        private readonly IMediator _bus;
         private readonly ILogger<NumberController> _logger;
 
-        public NumberController(ILogger<NumberController> logger)
+        public NumberController(
+            IMediator bus,
+            ILogger<NumberController> logger
+            )
         {
+            _bus = bus;
             _logger = logger;
         }
 
-        [HttpGet("{number}/dividers")]
-        public async Task GetDividers(int number)
+        [HttpGet("{Number}/dividers")]
+        public async Task<ObjectResult> GetDividers([FromRoute] GetNumbersDividersQuery query)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return Ok(await _bus.Send(query));
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, $"Error in {nameof(NumberController)}.GetDividers Flow.");
+                return Problem("Some problem flow, please retry again in a few minutes.");
+            }
         }
     }
 }
