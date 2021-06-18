@@ -31,6 +31,7 @@ namespace TechnicalChallenge.Api
         {
             if (env.IsDevelopment())
             {
+                app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TechnicalChallenge.Api v1"));
             }
@@ -38,6 +39,8 @@ namespace TechnicalChallenge.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
