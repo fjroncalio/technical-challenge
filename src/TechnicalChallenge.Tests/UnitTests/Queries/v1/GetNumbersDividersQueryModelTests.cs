@@ -1,5 +1,5 @@
-﻿using System;
-using FluentAssertions;
+﻿using FluentAssertions;
+using System;
 using TechnicalChallenge.Domain.Queries.v1.GetNumbersDividers;
 using Xunit;
 
