@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnicalChallenge.Domain",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnicalChallenge.Tests", "TechnicalChallenge.Tests\TechnicalChallenge.Tests.csproj", "{67E41ABA-1CE6-446C-B70E-60E5BE2DF9DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnicalChallenge.Domain.Core", "TechnicalChallenge.Domain.Core\TechnicalChallenge.Domain.Core.csproj", "{B636A93C-CC64-4581-8271-02F6C786EA48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnicalChallenge.Domain.Core", "TechnicalChallenge.Domain.Core\TechnicalChallenge.Domain.Core.csproj", "{B636A93C-CC64-4581-8271-02F6C786EA48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
