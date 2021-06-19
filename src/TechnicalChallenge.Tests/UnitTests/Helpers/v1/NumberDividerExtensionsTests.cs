@@ -31,6 +31,5 @@ namespace TechnicalChallenge.Tests.UnitTests.Helpers.v1
         {
             45.GetDividersInNumber(40).Count.Should().Be(5);
         }
-
     }
 }
