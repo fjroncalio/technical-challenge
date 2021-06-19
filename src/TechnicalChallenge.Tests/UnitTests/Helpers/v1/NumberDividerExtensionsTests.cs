@@ -7,14 +7,14 @@ namespace TechnicalChallenge.Tests.UnitTests.Helpers.v1
     public class NumberDividerExtensionsTests
     {
         [Theory(DisplayName = "Should Be True When Pass Prime Number In Method IsPrimeNumber")]
-        [InlineData(1, Skip = "Number 1"), InlineData(2, Skip = "Number 2"), InlineData(5, Skip = "Number 5"), InlineData(19, Skip = "Number 19")]
+        [InlineData(1), InlineData(2), InlineData(5), InlineData(19)]
         public void ShouldBeTrueWhenPassPassPrimeNumberInIsPrimeNumber(int number)
         {
             number.IsPrimeNumber().Should().BeTrue();
         }
 
         [Theory(DisplayName = "Should Be False When Pass Non Prime Number In Method IsPrimeNumber")]
-        [InlineData(10, Skip = "Number 10"), InlineData(4, Skip = "Number 4"), InlineData(100, Skip = "Number 100")]
+        [InlineData(10), InlineData(4), InlineData(100)]
         public void ShouldBeFalseWhenPassNonPrimeNumberInMethodIsPrimeNumber(int number)
         {
             number.IsPrimeNumber().Should().BeFalse();
